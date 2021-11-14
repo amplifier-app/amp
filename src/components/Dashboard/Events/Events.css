@@ -1,0 +1,29 @@
+.events-grid {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    border-bottom: none;
+}
+
+.events-grid .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr;
+    padding: 6px;
+}
+.events-grid .row:first-child {
+    background: #333;
+    color: white;
+}
+.events-grid .row:not(:first-child) {
+    border-bottom: 1px solid #ddd;
+    transition: background 140ms ease-out;
+    background: #fff;
+}
+
+.events-grid .row:not(:first-child):hover {
+    background: #EEE;
+}
+
+.events-grid .row p {
+    margin: 0;
+}

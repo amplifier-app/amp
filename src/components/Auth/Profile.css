@@ -1,0 +1,13 @@
+.profile-dropdown {
+	border-radius: 50%;
+}
+
+a.arrow {
+	color: white !important;
+}
+
+.right-align {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}

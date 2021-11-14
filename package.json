@@ -1,0 +1,136 @@
+{
+  "name": "react-demo",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "dev": "run-p dev:client dev:server",
+    "dev:client": "webpack -- --watch",
+    "dev:server": "nodemon ./server/server.ts",
+    "knex": "knex --knexfile ./server/db/knexfile.ts",
+    "build": "rimraf dist && webpack && tsc && copyfiles server/public/** dist/public/ -f && knex migrate:latest",
+    "start": "node dist/server.js",
+    "test": "run-p test:client test:server",
+    "test:client": "jest ./src",
+    "test:server": "jest ./server",
+    "netlify-build": "sed -i s/DAILY_API_KEY_PLACEHOLDER/${DAILY_API_KEY}/g netlify.toml && npm run build"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^4.5.0",
+    "@mui/lab": "^5.0.0-alpha.54",
+    "axios": "^0.24.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "date-fns": "^2.25.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-jwt": "^6.1.0",
+    "express-jwt-authz": "^2.4.1",
+    "express-oauth2-jwt-bearer": "^1.0.1",
+    "express-openid-connect": "^2.5.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.13.0",
+    "jest": "^27.3.1",
+    "jwks-rsa": "^2.0.5",
+    "knex": "^0.95.12",
+    "lodash": "^4.17.21",
+    "npm-run-all": "^4.1.5",
+    "ordinal": "^1.0.3",
+    "passport": "^0.5.0",
+    "passport-auth0": "^1.4.1",
+    "pg": "^7.18.2",
+    "react-icons": "^4.3.1",
+    "reactstrap": "^9.0.0",
+    "run-p": "^0.0.0",
+    "socket.io": "^4.3.1",
+    "socket.io-client": "^4.3.2",
+    "socket.io-cookie-parser": "^1.0.0",
+    "text-ellipsis": "^1.0.3",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@auth0/auth0-react": "^1.8.0",
+    "@babel/core": "7.13.1",
+    "@babel/plugin-proposal-class-properties": "7.13.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.13.0",
+    "@babel/plugin-transform-runtime": "7.13.1",
+    "@babel/preset-env": "7.13.0",
+    "@babel/preset-react": "7.12.13",
+    "@daily-co/daily-js": "^0.19.0",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/material": "^5.0.6",
+    "@reduxjs/toolkit": "^1.6.2",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.2",
+    "@types/lodash": "^4.14.176",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "@wwwouter/typed-knex": "^4.4.0",
+    "ajv": "^6.9.1",
+    "babel-loader": "^8.2.3",
+    "browserslist": "^4.17.5",
+    "copyfiles": "^2.4.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^6.5.0",
+    "eslint": "^7.32.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^5.9.2",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.25.1",
+    "nodemon": "^2.0.14",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^5.3.0",
+    "react-toastify": "^8.1.0",
+    "redux": "^4.1.2",
+    "rimraf": "^3.0.2",
+    "sqlite3": "^4.2.0",
+    "style-loader": "^3.3.1",
+    "ts-jest": "^27.0.7",
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ]
+  }
+}

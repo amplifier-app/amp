@@ -1,0 +1,38 @@
+.call-sidebar {
+	width: 100%;
+	background: white;
+	max-width: 400px;
+	height: 100%;
+}
+
+.tabs {
+	display: flex;
+	justify-content: stretch;
+	padding: 12px 20px;
+	height: calc(100% - 50px);
+	overflow: hidden;
+}
+
+.tabs .tab {
+	display: inline-block;
+	padding: 0px 15px;
+}
+
+.sidebarContent {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+.tabs .tab.selected {
+	font-weight: 600;
+}
+
+.tab-panel {
+	height: 100%;
+	width: 100%;
+}
+
+svg.notify {
+	color: red;
+}

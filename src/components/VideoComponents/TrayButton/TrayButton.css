@@ -1,0 +1,25 @@
+.tray-button {
+  width: 44px;
+  height: 44px;
+  border: none;
+  background-color: transparent;
+  margin: 0 5px;
+  font-size: 1.5em;
+  outline: 0;
+}
+
+.tray-button:active,
+.tray-button:focus {
+  outline: 0;
+}
+
+.tray-button.highlighted {
+  color: #fb5554;
+}
+.tray-button:disabled {
+  opacity: 33%;
+}
+
+.tray-button:enabled {
+  cursor: pointer;
+}

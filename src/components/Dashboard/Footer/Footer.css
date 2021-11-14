@@ -1,0 +1,10 @@
+.footer a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 140ms ease-out;
+}
+
+.footer a:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
